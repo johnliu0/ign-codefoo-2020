@@ -29,12 +29,13 @@ The following endpoints are available:
 #### `GET /items`:
 Gets a list of items.
 Parameters (URL queries):
-- type: e.g. Movie, Show, Comic
-- genre: e.g. Action, Comedy, Fantasy
-- publisher: e.g. Activision, HBO, Netflix
-- studio: EA Canada, Nintendo, Square Enix
+- mediatype: can be one of 'Movie', 'Show', 'Comic', or 'Game', defaults to none
+- reviewmin: minimum review score (inclusive)
+- reviewmax: maximum review score (inclusive)
+- sort: can be 'nameasc', 'namedesc', 'reviewasc', or reviewdesc'
 
 Example queries:
+
 `GET /items?mediatype=Movie&reviewmin=7&reviewmax=8&sort=reviewdesc` will get movies with review scores between 7 and 8 in descending review score
 `GET /items&reviewmax=5&sort=nameasc` will get all items with less than 5 review score in alphabetical order by name
 
@@ -42,6 +43,7 @@ Example queries:
 Gets a single item by name. This endpoint will get any associated genres, studios, franchises, publishers, and regions associated with the item.
 
 Example queries:
+
 `GET /items/Anna%20And%20The%20Apocalypse` will get all information associated with 'Anna And The Apocalypse'
 
 #### Running the CSV Reader
