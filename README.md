@@ -36,15 +36,15 @@ Parameters (URL queries):
 
 Example queries:
 
-`GET /items?mediatype=Movie&reviewmin=7&reviewmax=8&sort=reviewdesc` will get movies with review scores between 7 and 8 in descending review score
-`GET /items&reviewmax=5&sort=nameasc` will get all items with less than 5 review score in alphabetical order by name
+- `GET /items?mediatype=Movie&reviewmin=7&reviewmax=8&sort=reviewdesc` will get movies with review scores between 7 and 8 in descending review score
+- `GET /items&reviewmax=5&sort=nameasc` will get all items with less than 5 review score in alphabetical order by name
 
 #### `GET /items/:name`:
 Gets a single item by name. This endpoint will get any associated genres, studios, franchises, publishers, and regions associated with the item.
 
 Example queries:
 
-`GET /items/Anna%20And%20The%20Apocalypse` will get all information associated with 'Anna And The Apocalypse'
+- `GET /items/Anna%20And%20The%20Apocalypse` will get all information associated with 'Anna And The Apocalypse'
 
 #### Running the CSV Reader
 - First ensure that a MySQL database called `igncodefoo` is created and ready for use.
